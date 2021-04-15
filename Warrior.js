@@ -1,4 +1,5 @@
 const Character = require("./Character");
+const Weapon = require("./WeaponException");
 
 class Warrior extends Character {
   constructor(name, RPGClass, weapon) {
@@ -8,21 +9,19 @@ class Warrior extends Character {
     this.strength = 10;
     this.wit = 3;
     this.weapon = weapon;
+    this.weaponException = new Weapon(this.name, this.RPGClass, this.weapon);
 
-    console.log("May the gods be with me.");
+    console.log(`${this.name}: May the gods be with me.`);
 
     if (this.weapon) {
       this.getAttack;
-      this.setAttackWarrior();
     }
-  }
-
-  setAttackWarrior() {
-    console.log(this.name + ": " + `I'll crush you with my ${this.weapon} !`);
   }
 }
 
 const warrior = new Warrior("Luc", "Warrior", "Sword");
 
-// warrior.moves;
-// warrior.characterMovesBack();
+warrior.moves;
+warrior.characterMovesBack();
+warrior.tryToAttack("Wand");
+warrior.tryToAttack("Sword");

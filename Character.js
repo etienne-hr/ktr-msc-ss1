@@ -12,6 +12,10 @@ class Character {
     this.movable = new Movable(this.name, this.RPGClass);
   }
 
+  tryToAttack(weapon) {
+    this.weaponException.attackException(weapon);
+  }
+
   characterMovesBack() {
     this.movable.moveBack();
   }
@@ -73,10 +77,10 @@ class Character {
   }
 
   get moves() {
-    this.setMovesRight();
-    this.setMovesLeft();
-    this.setMovesBack();
-    this.setMovesForward();
+    this.movable.setMovesRight();
+    this.movable.setMovesLeft();
+    this.movable.setMovesBack();
+    this.movable.setMovesForward();
   }
 
   unsheathe() {
