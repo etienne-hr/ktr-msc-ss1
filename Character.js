@@ -6,6 +6,8 @@ class Character {
     this.agility = 2;
     this.strength = 2;
     this.wit = 2;
+    this.movesMages = "furtively";
+    this.movesWarrior = "like a bad boy";
   }
 
   get getAttack() {
@@ -52,6 +54,93 @@ class Character {
     return this.setWit();
   }
 
+  get moves() {
+    this.setMovesRight();
+    this.setMovesLeft();
+    this.setMovesBack();
+    this.setMovesForward();
+  }
+
+  moveRight() {
+    if (this.RPGClass === "Mage") {
+      return this.setMovesRight(this.getRPGClass);
+    } else if (this.RPGClass === "Warrior") {
+      return this.setMovesRight(this.getRPGClass);
+    }
+  }
+
+  moveLeft() {
+    if (this.RPGClass === "Mage") {
+      return this.setMovesLeft(this.getRPGClass);
+    } else if (this.RPGClass === "Warrior") {
+      return this.setMovesLeft(this.getRPGClass);
+    }
+  }
+
+  moveBack() {
+    if (this.RPGClass === "Mage") {
+      return this.setMovesBack(this.getRPGClass);
+    } else if (this.RPGClass === "Warrior") {
+      return this.setMovesBack(this.getRPGClass);
+    }
+  }
+
+  moveForward() {
+    if (this.RPGClass === "Mage") {
+      return this.setMovesForward(this.getRPGClass);
+    } else if (this.RPGClass === "Warrior") {
+      return this.setMovesForward(this.getRPGClass);
+    }
+  }
+
+  setMovesRight(rpg) {
+    if (rpg) {
+      if (rpg === "Mage") {
+        console.log(`${this.name}: moves right ${this.movesMages}`);
+      } else if (rpg === "Warrior") {
+        console.log(`${this.name}: moves right ${this.movesWarrior}`);
+      }
+    } else {
+      console.log(`${this.name}: moves right`);
+    }
+  }
+
+  setMovesLeft(rpg) {
+    if (rpg) {
+      if (rpg === "Mage") {
+        console.log(`${this.name}: moves left ${this.movesMages}`);
+      } else if (rpg === "Warrior") {
+        console.log(`${this.name}: moves left ${this.movesWarrior}`);
+      }
+    } else {
+      console.log(`${this.name}: moves left`);
+    }
+  }
+
+  setMovesBack(rpg) {
+    if (rpg) {
+      if (rpg === "Mage") {
+        console.log(`${this.name}: moves back ${this.movesMages}`);
+      } else if (rpg === "Warrior") {
+        console.log(`${this.name}: moves back ${this.movesWarrior}`);
+      }
+    } else {
+      console.log(`${this.name}: moves back`);
+    }
+  }
+
+  setMovesForward(rpg) {
+    if (rpg) {
+      if (rpg === "Mage") {
+        console.log(`${this.name}: moves forward ${this.movesMages}`);
+      } else if (rpg === "Warrior") {
+        console.log(`${this.name}: moves forward ${this.movesWarrior}`);
+      }
+    } else {
+      console.log(`${this.name}: moves forward`);
+    }
+  }
+
   setAttack() {
     console.log(this.name + ": " + "Rrrrrr");
   }
@@ -82,5 +171,3 @@ class Character {
 }
 
 module.exports = Character;
-
-// const character = new Character("Jean", "Mage");
