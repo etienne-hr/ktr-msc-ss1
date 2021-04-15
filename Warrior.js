@@ -25,4 +25,4 @@ class Warrior extends Character {
 const warrior = new Warrior("Luc", "Warrior", "Sword");
 
 // warrior.moves;
-// warrior.moveForward();
+// warrior.characterMovesBack();

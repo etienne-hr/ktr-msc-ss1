@@ -25,4 +25,7 @@ class Mage extends Character {
 const mage = new Mage("Jean", "Mage", "Wand");
 
 // mage.moves;
-// mage.moveBack();
+// mage.characterMovesBack();
+// mage.characterMovesLeft();
+// mage.characterMovesRight();
+// mage.characterMovesLeft();
